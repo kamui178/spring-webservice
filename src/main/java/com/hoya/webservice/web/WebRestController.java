@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hoya.webservice.domain.posts.PostsRepository;
 import com.hoya.webservice.dto.posts.PostsSaverRequestDto;
+import com.hoya.webservice.service.PostsService;
 
 import lombok.AllArgsConstructor;
 
@@ -14,7 +15,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class WebRestController {
 
-	private PostsRepository PostsRepository;
+//	private PostsRepository postsRepository;
+	private PostsService postsService;
 	
 	@GetMapping("/hello")
 	public String hello() {
@@ -22,8 +24,9 @@ public class WebRestController {
 	}
 	
 	@PostMapping("/posts")
-	public void savePosts(@RequestBody PostsSaverRequestDto dto) { // 만들기
-		PostsRepository.save(dto.toEntity());
+	public long savePosts(@RequestBody PostsSaverRequestDto dto) { // 만들기
+//		PostsRepository.save(dto.toEntity());
+		return postsService.save(dto);
 	}
 	
 	

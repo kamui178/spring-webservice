@@ -2,3 +2,24 @@ spring:
   h2:
     console:
       enabled: true
+#Encoding UTF-8
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+---
+spring:
+  profiles: local
+  datasource:
+    # if you run script file location when it can start
+    data: classpath:data-h2.sql 
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  h2:
+    console:
+      enabled: true
+      

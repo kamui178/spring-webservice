@@ -15,11 +15,11 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Entity // table과 link 되어질 class
+@Entity // 
 public class Posts extends BaseTimeEntitiy {
 	
-	@Id // 해당 테이블 pk
-	@GeneratedValue // pk 생성규칙 (default : auto_increment)
+	@Id // 
+	@GeneratedValue //
 	private Long id;
 	
 	@Column(length = 500, nullable = false)

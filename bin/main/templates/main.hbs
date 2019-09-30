@@ -1,18 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>springboot webservice</title>
-	<meta http-equiv="Content-Type" content = "text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/lib/bootstrap.min.css">
 </head>
+
 <body>
 	<h1>start springboot service</h1>
-	<table>
-		<tr>
-<td> test</td>
 
+	<div class="col-md-12">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal"> register
+		</button>
 
-		</tr>
-	</table>
+		<br />
+		<br />
+		<!-- show table {s}-->
+		<table class="table table-horizontal table-bordered">
+			<thead class="thead-strong">
+				<tr>
+					<th>number</th>
+					<th>title</th>
+					<th>author</th>
+					<th>modifiedDate</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+				{{#each posts}}
+				<tr>
+					<td>{{id}}</td>
+					<td>{{title}}</td>
+					<td>{{author}}</td>
+					<td>{{modifiedDate}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		<!-- show table {e}-->
+	</div>
+
+	<!-- click modal {s}-->
+	<div class="modal fade" id="savePostsModal" tabindex="-1" role="dialog" aria-labelledby="savePostsLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div calss="modal-header">
+					<h5 class="modal-title" id="savePostsLabel">
+						board register
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<sapn aria-hidden="true">
+							&times;
+						</sapn>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="title"> title </label>
+							<input type="text" class='form-control' id="title" placeholder="Insert title">
+						</div>
+						<div class="form-group">
+							<label for="author"> author </label>
+							<input type="text" class="form-control" id="author" placeholder="Insert author">
+						</div>
+						<div class="form-group">
+							<label for="content"> content </label>
+							<textarea class="form-control" id="content" placeholder="Insert content"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal"> cancel </button>
+					<button type="button" class="btn btn-primary" id="btn-save"> apply </button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- click modal {s}-->
+
+	<!-- js, jquery -->
+	<script src="/js/lib/jquery.min.js"></script>
+	<script src="/js/lib/bootstrap.min.js"></script>
+
+	<!-- custom js -->
+	<script src="/js/app/main.js"></script>
 </body>
+
 </html>
