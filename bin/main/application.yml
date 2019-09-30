@@ -9,6 +9,7 @@ spring:
       enabled: true
       force: true
 
+# local enviornment
 ---
 spring:
   profiles: local
