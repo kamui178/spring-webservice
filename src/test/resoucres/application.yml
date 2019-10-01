@@ -1,0 +1,11 @@
+#Test
+
+spring:  profiles:    active: local # Base environment
+
+---    
+#Local
+
+spring:
+  profiles:
+  jpa:
+    show-sql : true
