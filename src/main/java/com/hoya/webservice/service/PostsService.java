@@ -23,7 +23,7 @@ public class PostsService {
 		return postsRepository.save(dto.toEntity()).getId();
 	}
 	
-	@Transactional
+	@Transactional (readOnly = true)
 	public List<PostsMainResponseDto> findAllDesc() {
 		return postsRepository.findAllDesc()
 				.map(PostsMainResponseDto::new)
