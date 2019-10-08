@@ -39,9 +39,9 @@ public class PostsRepositoryTest {
 	public void board_load() {
 		//given
 		postsRepository.save(Posts.builder()
-				.title("test title")
-				.content("test content")
-				.author("test@hoya.com")
+				.title("test1")
+				.content("test1_content")
+				.author("test1@gmail.com")
 				.build());
 		
 		// when
@@ -59,9 +59,9 @@ public class PostsRepositoryTest {
 		//given
 		LocalDateTime now = LocalDateTime.now();
 		postsRepository.save(Posts.builder()
-				.title("test title")
-				.content("test content")
-				.author("test@hoya.com")
+				.title("test1")
+				.content("test1_content")
+				.author("test1@gmail.com")
 				.build());
 		
 		//when
@@ -69,10 +69,9 @@ public class PostsRepositoryTest {
 		
 		//then
 		Posts posts = postsList.get(0);
-//		assertTrue(posts.getCreateDate().isAfter(now));
-//		assertTrue(posts.getModfiedDate().isAfter(now));
-		
 		assertTrue(posts.getCreateDate().isAfter(now));
+		assertTrue(posts.getModfiedDate().isAfter(now));
+		
 		
 	}
 }

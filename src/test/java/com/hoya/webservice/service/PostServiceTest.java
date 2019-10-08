@@ -32,9 +32,9 @@ public class PostServiceTest {
 	public void dtoDataSave() {
 		//given
 		PostsSaverRequestDto dto = PostsSaverRequestDto.builder()
-				.author("hoya@test.com")
-				.content("test")
-				.title("title")
+				.author("test1@gmail.com")
+				.content("test1_content")
+				.title("test1")
 				.build();
 		
 		//when
