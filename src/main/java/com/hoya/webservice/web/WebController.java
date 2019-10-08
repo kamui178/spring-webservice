@@ -11,7 +11,7 @@ import com.hoya.webservice.service.PostsService;
 
 import lombok.AllArgsConstructor;
 
-@RestController
+@Controller
 @AllArgsConstructor
 public class WebController {
 
