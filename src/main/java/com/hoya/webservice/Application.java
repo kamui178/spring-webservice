@@ -4,8 +4,10 @@ package com.hoya.webservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 
+@EnableJpaAuditing
 @SpringBootApplication
 @Configuration
 public class Application {
