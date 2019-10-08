@@ -6,6 +6,6 @@ spring:  profiles:    active: local # Base environment
 #Local
 
 spring:
-  profiles:
+  profiles: local
   jpa:
     show-sql : true
