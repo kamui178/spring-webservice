@@ -1,6 +1,6 @@
 package com.hoya.webservice.domain;
 
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,6 +17,7 @@ import com.hoya.webservice.domain.posts.Posts;
 import com.hoya.webservice.domain.posts.PostsRepository;
 
 import static org.junit.Assert.assertThat;
+//import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
@@ -28,7 +29,6 @@ public class PostsRepositoryTest {
 	
 	@After
 	public void cleanup() {
-		// 테스트 완료후 repository 전체를 비우는 코드
 		
 		postsRepository.deleteAll();
 		
@@ -54,20 +54,25 @@ public class PostsRepositoryTest {
 	}
 	
 	@Test
+//	@Ignore
 	public void Register_BaseTimeEntity() {
 		//given
 		LocalDateTime now = LocalDateTime.now();
 		postsRepository.save(Posts.builder()
 				.title("test title")
 				.content("test content")
-				.author("test@gmail.com")
+				.author("test@hoya.com")
 				.build());
+		
 		//when
 		List<Posts> postsList = postsRepository.findAll();
 		
 		//then
 		Posts posts = postsList.get(0);
+//		assertTrue(posts.getCreateDate().isAfter(now));
+//		assertTrue(posts.getModfiedDate().isAfter(now));
+		
 		assertTrue(posts.getCreateDate().isAfter(now));
-		assertTrue(posts.getModfiedDate().isAfter(now));
+		
 	}
 }

@@ -4,8 +4,10 @@ import java.util.stream.Stream;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.stereotype.Repository;
 
+@EnableJpaAuditing
 @Repository
 public interface PostsRepository extends JpaRepository<Posts, Long>  {
 
