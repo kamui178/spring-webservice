@@ -17,7 +17,7 @@ public class WebController {
 
 	private PostsService postsService;
 	
-	@GetMapping("/")
+	@GetMapping("/12")
 	public String main(Model model) {
 		model.addAttribute("posts", postsService.findAllDesc());
 		return "main";
