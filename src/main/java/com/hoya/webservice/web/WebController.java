@@ -11,14 +11,21 @@ import com.hoya.webservice.service.PostsService;
 
 import lombok.AllArgsConstructor;
 
-@RestController
+@Controller
 @AllArgsConstructor
 public class WebController {
 
 	private PostsService postsService;
+	
 	@GetMapping("/")
 	public String main(Model model) {
 		model.addAttribute("posts", postsService.findAllDesc());
 		return "main";
+	}
+	
+	//test
+	@GetMapping("/test123")
+	public String test123() {
+		return "test1123";
 	}
 }
