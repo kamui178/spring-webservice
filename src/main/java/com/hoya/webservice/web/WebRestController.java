@@ -1,5 +1,6 @@
 package com.hoya.webservice.web;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,11 +24,20 @@ public class WebRestController {
 		return "HelloWorld!";
 	}
 	
+	@GetMapping("/")
+	public String main(Model model) {
+		model.addAttribute("posts", postsService.findAllDesc());
+		return "main";
+	}
+	
+	
 	@PostMapping("/posts")
 	public long savePosts(@RequestBody PostsSaverRequestDto dto) { 
 //		PostsRepository.save(dto.toEntity());
 		return postsService.save(dto);
 	}
+	
+
 	
 	
 	
