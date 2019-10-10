@@ -17,15 +17,11 @@ public class WebController {
 
 	private PostsService postsService;
 	
-	@GetMapping("/12")
+	@GetMapping("/")
 	public String main(Model model) {
 		model.addAttribute("posts", postsService.findAllDesc());
 		return "main";
 	}
 	
-	//test
-	@GetMapping("/test123")
-	public String test123() {
-		return "test1123";
-	}
+
 }
