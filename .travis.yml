@@ -1,28 +1,3 @@
-#language: java
-#jdk:
-#  - openjdk8
-# 
-#branches:
-#  only:
-#    - master
-#    
-## Travies CI 서버의 Home
-#cache:
-#  directories:
-#    - '$HOME/.m2/repository'
-#    - '$HOME/.gradle'
-#    
-## before_script: 
-##  - 'chmod +x gradlew'
-#
-#script: 'chmod +x ./gradlew clean build'
-#
-## CI 실행 완료시 메일로 알람
-#notifications:
-#  email:
-#    recipients:
-#      - overraykim0@gmail.com
-
 language: java
 
 before_script:
@@ -40,7 +15,7 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
-#script: "./gradlew clean build"
+
 
 # CI 실행 완료시 메일로 알람
 notifications:
