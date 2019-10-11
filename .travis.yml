@@ -1,22 +1,17 @@
 language: java
 
-before_script:
-  - chmod +x gradlew
-
 jdk: openjdk8
 
 branches:
   only: master
 
 # Travis CI 서버의 Home
-#cache:
-#  directories:
-#    - '$HOME/.m2/repository'
-#    - '$HOME/.gradle'
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
 
-#script: "./gradlew clean build"
-
-script : ./gradlew test
+script: "./gradlew clean build"
 
 # CI 실행 완료시 메일로 알람
 notifications:
