@@ -1,7 +1,7 @@
 language: java
 
-#before_script:
-#  - chmod +x gradlew
+before_script:
+  - chmod +x gradlew
 
 jdk: openjdk8
 
@@ -14,7 +14,9 @@ branches:
 #    - '$HOME/.m2/repository'
 #    - '$HOME/.gradle'
 
-script: "./gradlew clean build"
+#script: "./gradlew clean build"
+
+script : ./gradlew test
 
 # CI 실행 완료시 메일로 알람
 notifications:
