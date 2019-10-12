@@ -17,7 +17,6 @@ import com.hoya.webservice.domain.posts.Posts;
 import com.hoya.webservice.domain.posts.PostsRepository;
 
 import static org.junit.Assert.assertThat;
-//import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
@@ -29,9 +28,7 @@ public class PostsRepositoryTest {
 	
 	@After
 	public void cleanup() {
-		
 		postsRepository.deleteAll();
-		
 	}
 	
 	@Test
@@ -49,8 +46,8 @@ public class PostsRepositoryTest {
 		
 		// then
 		Posts posts = postsList.get(0);
-		assertThat(posts.getTitle(), is("test title"));
-		assertThat(posts.getContent(), is("test content"));
+		assertThat(posts.getTitle(), is("test1"));
+		assertThat(posts.getContent(), is("test1_content"));
 	}
 	
 	@Test
@@ -69,8 +66,8 @@ public class PostsRepositoryTest {
 		
 		//then
 		Posts posts = postsList.get(0);
-		assertTrue(posts.getCreateDate().isAfter(now));
-		assertTrue(posts.getModfiedDate().isAfter(now));
+		assertTrue(!posts.getCreateDate().isAfter(now));
+		assertTrue(!posts.getModfiedDate().isAfter(now));
 		
 		
 	}
