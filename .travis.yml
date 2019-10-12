@@ -1,0 +1,39 @@
+language: java
+
+jdk: openjdk8
+
+branches:
+  only: master
+
+# Travis CI Server Home
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+    
+before_deploy:
+  - zip -r spring-webservice *
+  - mkdir -p deploy
+  - mv spring-webservice.zip deploy/spring-webserivce.zip 
+    
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings value
+    secret_access_key : $AWS_SECRET_KEY # Travis rep settings value
+    local_dir: deploy # before_deploy directory
+    bucket: springboot-webservice-deploys # S3 Bucket
+    region: ap-northeast-2
+    skip-cleanup: true
+    acl: public_read
+    wait-until-deployed: true
+    on:
+      repo: kamui178/spring-webservice # github
+      branch: master
+      
+# CI message alram
+notifications:
+  email:
+    recipients: shrkfl181@gmail.com
+    

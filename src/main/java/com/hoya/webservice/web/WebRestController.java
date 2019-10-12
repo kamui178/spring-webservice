@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hoya.webservice.domain.posts.PostsRepository;
 import com.hoya.webservice.dto.posts.PostsSaverRequestDto;
 import com.hoya.webservice.service.PostsService;
 
@@ -23,11 +22,14 @@ public class WebRestController {
 		return "HelloWorld!";
 	}
 	
+	
 	@PostMapping("/posts")
 	public long savePosts(@RequestBody PostsSaverRequestDto dto) { 
 //		PostsRepository.save(dto.toEntity());
 		return postsService.save(dto);
 	}
+	
+
 	
 	
 	
