@@ -31,6 +31,21 @@ deploy:
     on:
       repo: kamui178/spring-webservice # github
       branch: master
+  
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: springboot-webservice-deploys
+    key: spring-webserivce.zip
+    bundle_type: zip
+    application: spring-webservice
+    deployment_group: springboot-webservice-group
+    region: ap-northeast-2
+    wait-until-deployed: true
+    on:
+      repo: kamui178/spring-webservice
+      branch: master
+  
       
 # CI message alram
 notifications:

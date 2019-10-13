@@ -1,0 +1,5 @@
+version: 0.0 # codeDeploy version 딴 버전 쓰면 에러뜸 (프로젝트 버전 아니므로)
+os: linux
+files:
+  - source: / # s3 bucket copy location
+    destination: /home/ec2-user/app/travis/build/ # zip copy location
