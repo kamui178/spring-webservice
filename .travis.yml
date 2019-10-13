@@ -39,7 +39,7 @@ deploy:
     key: spring-webserivce.zip
     bundle_type: zip
     application: spring-webservice
-    deployment_group: springboot-webservice-group
+    deployment_group: spring-webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
     on:
