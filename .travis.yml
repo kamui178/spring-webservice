@@ -16,7 +16,7 @@ script: "./gradlew clean build"
 before_deploy:
   - zip -r spring-webservice *
   - mkdir -p deploy
-  - mv spring-webservice.zip deploy/spring-webserivce.zip 
+  - mv spring-webservice.zip deploy/spring-webservice.zip 
     
 deploy:
   - provider: s3
@@ -36,7 +36,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: springboot-webservice-deploys
-    key: spring-webserivce.zip
+    key: spring-webservice.zip
     bundle_type: zip
     application: spring-webservice
     deployment_group: spring-webservice-group
