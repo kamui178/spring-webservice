@@ -1,4 +1,4 @@
-version: 0.0 # codeDeploy version
+version: 0.0 # codeDeploy version ( possible -> only project build )
 os: linux
 files:
   - source: / # s3 bucket copy location
