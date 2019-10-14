@@ -1,5 +1,11 @@
 version: 0.0 # codeDeploy version ( possible -> only project build )
 os: linux
+
 files:
   - source: / # s3 bucket copy location
     destination: /home/ec2-user/app/travis/build/ # zip copy location
+    
+hooks:
+  AfterInstall: # Run to command, before if files released the end.
+    - location: execute-deploy.sh
+      timeout: 180
