@@ -2,6 +2,7 @@ package com.hoya.webservice.web;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class WebRestControllerTest {
 	private TestRestTemplate restTemplate;
 	
 	@Test
+	@Ignore
 	public void check_profile() {
 		//when
 		String profile = this.restTemplate.getForObject("/profile", String.class);
