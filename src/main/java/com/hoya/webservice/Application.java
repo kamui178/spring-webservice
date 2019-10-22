@@ -17,8 +17,8 @@ public class Application {
 //			+ "/app/config/spring-webservice/real-application.yml";
 	
 	public static final String APPLICATION_LOCATIONS = "spring.config.location="
-//			+ "classpath:application.yml,"
-			+ "classpath:/app/config/spring-webservice/real-application.yml";
+			+ "classpath:application.yml";
+//			+ "classpath:/app/config/spring-webservice/real-application.yml";
 
 
 	public static void main(String[] args) {
