@@ -12,9 +12,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication
 public class Application {
 	
+//	public static final String APPLICATION_LOCATIONS = "spring.config.location="
+//			+ "classpath:application.yml, "
+//			+ "/app/config/spring-webservice/real-application.yml";
+	
 	public static final String APPLICATION_LOCATIONS = "spring.config.location="
-			+ "classpath:application.yml,"
-			+ "/app/config/spring-webservice/real-application.yml";
+//			+ "classpath:application.yml,"
+			+ "classpath:/app/config/spring-webservice/real-application.yml";
+
 
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(Application.class)
