@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: / # s3 bucket copy location
-    destination: /home/ec2-user/app/travis/build/ # zip copy location
+    destination: /home/ec2-user/app/nonstop/spring-webservice/ # zip copy location
     
 hooks:
   AfterInstall: # Run to command, before if files released the end.
