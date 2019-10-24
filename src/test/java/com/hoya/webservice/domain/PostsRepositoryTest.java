@@ -51,7 +51,7 @@ public class PostsRepositoryTest {
 	}
 	
 	@Test
-//	@Ignore
+	@Ignore
 	public void Register_BaseTimeEntity() {
 		//given
 		LocalDateTime now = LocalDateTime.now();
