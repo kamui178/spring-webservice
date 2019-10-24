@@ -32,7 +32,7 @@ public class PostsRepositoryTest {
 	}
 	
 	@Test
-	@Ignore
+//	@Ignore
 	public void board_load() {
 		//given
 		postsRepository.save(Posts.builder()

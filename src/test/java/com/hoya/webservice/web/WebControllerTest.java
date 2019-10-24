@@ -19,7 +19,7 @@ public class WebControllerTest {
 	private TestRestTemplate restTemplate;
 	
 	@Test
-	@Ignore
+//	@Ignore
 	public void load_mainPage() {
 		// when
 		String body = this.restTemplate.getForObject("/", String.class);
