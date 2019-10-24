@@ -20,7 +20,7 @@ public class PostsMainResponseDto {
 		id = entity.getId();
 		title = entity.getTitle();
 		author = entity.getAuthor();
-		modifiedDate = toStringDateTime(entity.getModfiedDate());
+		modifiedDate = toStringDateTime(entity.getModified_date());
 	}
 
 	// java 8 version

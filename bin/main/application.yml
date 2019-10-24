@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: local
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
    
 # local enviornment
 ---
@@ -18,13 +22,20 @@ spring:
     console:
       enabled: true
 
-server:
-  port: 8083
+#server:
+#  port: 8083
   
 ---
 
 spring:
   profiles: set1
+  datasource:
+    url: jdbc:mariadb://springbootservice.csbnohvfiz5i.ap-northeast-2.rds.amazonaws.com:3306/webservice
+    username: hoya
+    password: 'hoya0801'
+    driver-class-name: org.mariadb.jdbc.Driver
+
+spring.profiles.include: real-db
 
 server:
   port: 8081
@@ -33,6 +44,13 @@ server:
 
 spring:
   profiles: set2
+  datasource:
+    url: jdbc:mariadb://springbootservice.csbnohvfiz5i.ap-northeast-2.rds.amazonaws.com:3306/webservice
+    username: hoya
+    password: 'hoya0801'
+    driver-class-name: org.mariadb.jdbc.Driver
+
+spring.profiles.include: real-db
   
 server:
   port: 8082
