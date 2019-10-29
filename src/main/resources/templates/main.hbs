@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<html>-->
 <head>
 	<title>springboot webservice</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -9,9 +9,12 @@
 </head>
 
 <body>
-	<h1>start springboot service real real new version</h1>
+	<h1>硫� 湲곕� �븳寃�???</h1>
+    
+    <img id="card" alt="card" th:src="@{/img/trap_card_1.jpg}"></img>
+    
 	<div class="col-md-12">
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal"> register
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal"> 湲� �궓湲곌린 �뀒�뒪�듃�슜
 		</button>
 
 		<br />
@@ -20,11 +23,18 @@
 		<table class="table table-horizontal table-bordered">
 			<thead class="thead-strong">
 				<tr>
+
 				
 					<th>number</th>
 					<th>title</th>
 					<th>author</th>
 					<th>modifiedDate</th>
+
+					<th>踰덊샇</th>
+					<th>�씠由�</th>
+					<th>�궡�슜</th>
+<!--					<th>modifiedDate</th>-->
+
 				</tr>
 			</thead>
 			<tbody id="tbody">
@@ -33,7 +43,7 @@
 					<td>{{id}}</td>
 					<td>{{title}}</td>
 					<td>{{author}}</td>
-					<td>{{modifiedDate}}</td>
+<!--					<td>{{modifiedDate}}</td>-->
 				</tr>
 				{{/each}}
 			</tbody>
@@ -48,7 +58,7 @@
 			<div class="modal-content">
 				<div calss="modal-header">
 					<h5 class="modal-title" id="savePostsLabel">
-						board register
+						ui �뵲�쐞 �뾾�뒗嫄곕떎
 					</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<sapn aria-hidden="true">
@@ -59,17 +69,19 @@
 				<div class="modal-body">
 					<form>
 						<div class="form-group">
-							<label for="title"> title </label>
-							<input type="text" class='form-control' id="title" placeholder="Insert title">
+							<label for="title"> �젣紐� </label>
+							<input type="text" class='form-control' id="title" placeholder="Insert your title">
 						</div>
 						<div class="form-group">
-							<label for="author"> author </label>
-							<input type="text" class="form-control" id="author" placeholder="Insert author">
+							<label for="author"> �궡�슜 </label>
+							<input type="text" class="form-control" id="author" placeholder="Insert yout content">
 						</div>
-						<div class="form-group">
-							<label for="content"> content </label>
-							<textarea class="form-control" id="content" placeholder="Insert content"></textarea>
+
+						<div class="form-group" hidden="hidden">
+							<label for="content"> test hidden </label>
+							<textarea class="form-control" id="content" placeholder="Insert your content"></textarea>
 						</div>
+
 					</form>
 				</div>
 				<div class="modal-footer">
