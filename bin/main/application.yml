@@ -32,7 +32,7 @@ spring:
   datasource:
     url: jdbc:mariadb://springbootservice.csbnohvfiz5i.ap-northeast-2.rds.amazonaws.com:3306/webservice
     username: hoya
-    password: 'hoya0801'
+    password: 'f0d50099'
     driver-class-name: org.mariadb.jdbc.Driver
 
 spring.profiles.include: real-db
@@ -47,7 +47,7 @@ spring:
   datasource:
     url: jdbc:mariadb://springbootservice.csbnohvfiz5i.ap-northeast-2.rds.amazonaws.com:3306/webservice
     username: hoya
-    password: 'hoya0801'
+    password: 'f0d50099'
     driver-class-name: org.mariadb.jdbc.Driver
 
 spring.profiles.include: real-db
